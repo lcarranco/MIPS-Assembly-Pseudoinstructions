@@ -2,7 +2,7 @@
 # a simple program that computes the sum of an array of elements
 
 .data
-L1:     .word 0x44, 22, 33, 55      # array for which we will compute the sum
+L1:     .word 0x44, 22, 33, 55                  # array for which we will compute the sum
 
         .text
         .globl main
@@ -20,7 +20,7 @@ loop:   lw		$t3, 0($t0)		# load first element
         bgt		$t2, $0, then	        # if $t2 > $0 then then     # if the sum > 0, move sum to $s0
         move 	        $s0, $t2		# $s0 = $t2
         j		exit		        # jump to exit
-        
+
 then:   move 	        $s1, $t2		# $s1 = $t2                 # else move sum to $s1              # moves the value in $t2 to the value in $s1
 
 exit:   li		$v0, 10		        # $v0 = 10
