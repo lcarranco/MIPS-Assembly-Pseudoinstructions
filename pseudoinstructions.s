@@ -22,6 +22,8 @@ loop:   lw		$t3, 0($t0)		# load first element
         j		exit		        # jump to exit
 
 then:   move 	        $s1, $t2		# $s1 = $t2                 # else move sum to $s1              # moves the value in $t2 to the value in $s1
+        li		$v0, 1		        # $v0 = 1 
+        syscall
 
 exit:   li		$v0, 10		        # $v0 = 10
         syscall
